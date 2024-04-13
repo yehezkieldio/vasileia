@@ -1,5 +1,5 @@
 {
-  "name": "vasileia",
+  "name": "bun-biome-boilerplate",
   "module": "src/main.ts",
   "type": "module",
   "scripts": {
