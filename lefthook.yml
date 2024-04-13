@@ -1,8 +1,5 @@
 pre-commit:
   commands:
-    check_existing:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: bunx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true {files}
     check_staged:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: bunx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
