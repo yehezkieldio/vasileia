@@ -1,20 +1,40 @@
 {
-  "name": "vasileia",
-  "module": "src/main.ts",
-  "type": "module",
-  "scripts": {
-    "start": "bun run .",
-    "format": "bunx @biomejs/biome format --write ./src",
-    "format:check": "bunx @biomejs/biome format ./src",
-    "lint": "bunx @biomejs/biome check --apply ./src",
-    "lint:check": "bunx @biomejs/biome check ./src"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.6.4",
-    "@types/bun": "latest",
-    "lefthook": "^1.6.10"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+    "name": "vasileia",
+    "module": "src/main.ts",
+    "type": "module",
+    "scripts": {
+        "start": "bun run .",
+        "compose:up": "docker-compose up -d",
+        "compose:down": "docker-compose down",
+        "db:generate": "drizzle-kit generate:pg",
+        "db:push": "drizzle-kit push:pg",
+        "db:studio": "drizzle-kit studio",
+        "db:migrate": "bun ./scripts/run-migrations.ts",
+        "format": "bunx @biomejs/biome format --write ./src",
+        "format:check": "bunx @biomejs/biome format ./src",
+        "lint": "bunx @biomejs/biome check --apply ./src",
+        "lint:check": "bunx @biomejs/biome check ./src"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.6.4",
+        "@t3-oss/env-core": "^0.9.2",
+        "@types/bun": "latest",
+        "drizzle-kit": "^0.20.14",
+        "lefthook": "^1.6.10",
+        "zod": "^3.22.4"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@sapphire/discord.js-utilities": "^7.1.6",
+        "@sapphire/framework": "^5.1.0",
+        "@sapphire/plugin-logger": "^4.0.2",
+        "@sapphire/plugin-subcommands": "^6.0.3",
+        "@sapphire/utilities": "^3.15.3",
+        "dayjs": "^1.11.10",
+        "discord.js": "^14.14.1",
+        "drizzle-orm": "^0.30.8",
+        "postgres": "^3.4.4"
+    }
 }
