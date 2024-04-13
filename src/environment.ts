@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const env = createEnv({
     server: {
-        DISCORD_URL: z.string().min(1),
+        DISCORD_TOKEN: z.string().min(1),
         DATABASE_URL: z.string().min(1),
     },
     runtimeEnv: process.env,
