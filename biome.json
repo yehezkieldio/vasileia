@@ -19,6 +19,6 @@
         "lineWidth": 120
     },
     "files": {
-        "ignore": ["migrations"]
+        "ignore": ["migrations", "node_modules"]
     }
 }

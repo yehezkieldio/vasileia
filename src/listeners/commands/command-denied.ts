@@ -22,6 +22,12 @@ export class ChatInputCommandDeniedListener extends Listener {
                 embed.setDescription("This command has been disabled.");
                 return data.interaction.reply({ embeds: [embed], ephemeral: true });
 
+            // Catch for when the command is guild only.
+            // TODO: Current identifier is deprecated, update to the new recommended identifier.
+            case VasileiaIdentifiers.PreconditionGuildOnly:
+                embed.setDescription("This command can only be used in a guild.");
+                return data.interaction.reply({ embeds: [embed], ephemeral: true });
+
             // Catch for when the user does not have the required cooldown
             case VasileiaIdentifiers.PreconditionCooldown:
                 embed.setDescription("Please wait before using this command again.");
