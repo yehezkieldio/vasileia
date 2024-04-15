@@ -5,7 +5,7 @@ import { SlashCommandBuilder } from "discord.js";
 
 /**
  * Globally disable a command from being used in the bot.
- * @version 1.0.0
+ * @version 1.0.1
  */
 export class DisableCommandCommand extends VasileiaCommand {
     public constructor(context: VasileiaCommand.Context, options: VasileiaCommand.Options) {
@@ -19,7 +19,7 @@ export class DisableCommandCommand extends VasileiaCommand {
     }
 
     public override registerApplicationCommands(registry: VasileiaCommand.Registry) {
-        const commands = this.container.stores.get("commands");
+        const commands = this.container.stores.get("commands").filter((command) => command.enabled === true);
 
         const command = new SlashCommandBuilder()
             .setName(this.name)
