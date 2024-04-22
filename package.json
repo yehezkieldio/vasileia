@@ -17,7 +17,7 @@
     },
     "devDependencies": {
         "@biomejs/biome": "^1.6.4",
-        "@t3-oss/env-core": "^0.9.2",
+        "@t3-oss/env-core": "^0.10.0",
         "@types/bun": "latest",
         "drizzle-kit": "^0.20.14",
         "lefthook": "^1.6.10",
